@@ -1,0 +1,87 @@
+.alert {
+  position: relative;
+  margin-bottom: 0.5rem;
+  border: 1px solid transparent;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.78rem 1.25rem;
+  color: inherit;
+}
+.alert-warning {
+  color: #7d5a29;
+  background-color: #fcefdc;
+  border-color: #fbe8cd;
+}
+
+.alert-warning hr {
+  border-top-color: #f9ddb5;
+}
+
+.alert-warning .alert-link {
+  color: #573e1c;
+}
+
+.alert-danger {
+  color: #712b29;
+  background-color: #f7dddc;
+  border-color: #f4cfce;
+}
+
+.alert-danger hr {
+  border-top-color: #efbbb9;
+}
+
+.alert-danger .alert-link {
+  color: #4c1d1b;
+}
+
+.fade {
+  transition: opacity 0.15s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade {
+    transition: none;
+  }
+}
+
+.fade:not(.show) {
+  opacity: 0;
+}
+.close {
+  float: right;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+
+.close:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):focus {
+  opacity: 0.75;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+.close {
+  padding: 1px;
+  margin: 1px;
+  margin-top: 5px;
+}

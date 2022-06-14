@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <style>
+      .span1 {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 15px;
+      }
+    </style>
+    <title>Linkifly URL Shortener</title>
+  </head>
+  <body>
+    <div>
+      <div class="main">
+        <div class="card">
+          <div class="header">
+            <h1><%=url.heading%></h1>
+            <p><%=message%></p>
+          </div>
+          <div class="body">
+            <p>
+              <%=url.p%>
+              <a href="/<%=url.code%>" class="link" target="_blank"
+                ><%=url.shorturl%></a
+              >
+            </p>
+            <!--Copy to clipboard-->
+            <div id="secretInfo" style="display: none"><%=url.shorturl%></div>
+            <div id="checker" style="display: none"><%=url.p%></div>
+            <div id="copydiv">
+              <div class="wrapper" style="margin-bottom: 10px" id="copier">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="btnCopy"
+                  style="
+                    border: none;
+                    padding: 5px 5px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    background-color: transparent;
+                  "
+                >
+                  <span class="span1">Copy</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clipboard-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div id="copydivtwo" hidden>
+              <div class="wrapper" style="margin-bottom: 10px" id="copier">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="btnCopytwo"
+                  style="
+                    border: none;
+                    padding: 5px 5px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    background-color: transparent;
+                  "
+                  onclick="copiertwo()"
+                >
+                  <span class="span1">Copied</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clipboard-check-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"
+                    />
+                    <path
+                      d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!--End Copy to clipboard-->
+            <p>
+              <a id="back-link" href="/"> ← Go Back </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Copy to clipboard Script-->
+    <script type="text/javascript">
+      const k = document.getElementById("checker").innerHTML;
+      if (k == "") {
+        var elem = document.getElementById("copier");
+        elem.remove();
+      } else {
+        var $body = document.getElementsByTagName("body")[0];
+        var $btnCopy = document.getElementById("btnCopy");
+        var secretInfo = document.getElementById("secretInfo").innerHTML;
+        var copyToClipboard = function (secretInfo) {
+          var $tempInput = document.createElement("INPUT");
+          $body.appendChild($tempInput);
+          $tempInput.setAttribute("value", secretInfo);
+          $tempInput.select();
+          document.execCommand("copy");
+          $body.removeChild($tempInput);
+        };
+        $btnCopy.addEventListener("click", function (ev) {
+          copyToClipboard(secretInfo);
+          const copier = document.getElementById("copydiv");
+          copier.setAttribute("hidden", "true");
+          const copiertwo = document.getElementById("copydivtwo");
+          copiertwo.removeAttribute("hidden");
+        });
+      }
+
+      function copiertwo() {
+        const link = document.getElementById("secretInfo").innerHTML;
+        var $body = document.getElementsByTagName("body")[0];
+        var $btnCopy = document.getElementById("btnCopytwo");
+        function copyToClipboard(link) {
+          var $tempInput = document.createElement("INPUT");
+          $body.appendChild($tempInput);
+          $tempInput.setAttribute("value", link);
+          $tempInput.select();
+          document.execCommand("copy");
+          $body.removeChild($tempInput);
+        }
+        copyToClipboard(link);
+      }
+    </script>
+    <!--End of clipboard Script-->
+  </body>
+</html>

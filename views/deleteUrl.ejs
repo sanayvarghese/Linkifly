@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <style>
+      body {
+        background-color: #1f1f1f !important;
+      }
+      .footfixed {
+        position: absolute !important;
+        width: 100% !important;
+        background-color: #181515 !important;
+      }
+    </style>
+  </head>
+  <div class="container">
+    <h2 style="margin-top: 3rem">Delete any created URL</h2>
+    <br />
+    <% urls.forEach(function(url) { %>
+
+    <div class="card" style="background: #2e279d">
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="/<%=url.code%>" style="color: #f9c6ba"><%=url.shorturl%></a>
+        </h4>
+        <p class="card-text">Original URL: <%=url.longurl%></p>
+        <a href="/sanay/delete/url/<%=url.id%>"
+          ><button class="btn btn-danger">Delete</button>
+        </a>
+      </div>
+    </div>
+    <br />
+    <% }); %>
+  </div>
+  <body>
+    <footer id="main-footer" class="mt-5 footfixed">
+      &copy; 2022 Dragon Gear
+    </footer>
+  </body>
+</html>

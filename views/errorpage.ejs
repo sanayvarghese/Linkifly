@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--Navigation bar-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <style>
+      body {
+        background-color: #1f1f1f !important;
+        color: #fff !important;
+      }
+      input {
+        color: rgb(255, 255, 255) !important;
+      }
+      .footfixed {
+        position: absolute !important;
+        width: 100% !important;
+        bottom: 0%;
+        background-color: #181515 !important;
+      }
+      .containerb {
+        text-align: center;
+      }
+      .arrow {
+        margin-top: 1rem;
+        margin-right: 6px;
+      }
+      a {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      a:hover {
+        color: rgb(255, 255, 255);
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+      }
+      .headerbh {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+      }
+      .navbar {
+        width: 100%;
+      }
+      .bh {
+        position: fixed;
+        color: #e74c3c;
+        margin-left: 1700vh;
+        margin-right: 10vh;
+      }
+      .red {
+        color: #e74c3c;
+        margin-left: 5%;
+      }
+      .a1 {
+        display: inline-flex !important;
+      }
+    </style>
+  </head>
+  <nav class="navbar nav-header navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mb-1 a1" href="/"
+      ><i class="fa fa-link" style="margin: 5px"></i>URL
+      <div class="red">Shortener</div></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarColor02"
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="nav nav-bar-nav navbar-right gfd">
+        <li class="nav-item">
+          <a class="nav-link" href="https://dragongear.tk/"> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://dragongear.tk/about"> About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://dragongear.tk/work"> My Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://contact.dragongear.tk/">
+            Contact Us</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://dragongear.tk/join"> Join Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1 style="text-align: center; margin-top: 2rem"><%=status%></h1>
+
+  <h3 style="text-align: center"><%=errormessage%></h3>
+
+  <body>
+    <div class="containerb">
+      <p>
+        <a href="/" class="link"
+          ><i class="fa fa-arrow-left arrow"></i> Go Back</a
+        >
+      </p>
+    </div>
+    <footer id="main-footer" class="mt-1 footfixed">
+      &copy; 2022 Dragon Gear
+    </footer>
+  </body>
+</html>

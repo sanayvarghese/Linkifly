@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Dragon Gear Offical Website" />
+    <link rel="icon" href="/img/logo.png" type="image/png" sizes="30x30" />
+    <link
+      rel="stylesheet"
+      href="/css/main.css" !important
+    /><link rel="stylesheet" href="/css/newbootstrap.css">
+    <link rel="stylesheet" href="/css/baseurl.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <title>Linkifly URL Shortener</title>
+    <meta name="description" content="Shorten you long url with custom key words for free. All shorten urls will be permanent"/>
+    <meta property="og:title" content="Linkifly Url Shortener" >
+    <meta property="og:url" content="https://linkifly.tk" >
+    <meta property="og:description  " content="Shorten you long url with custom key words for free. All shorten urls will be permanent" >
+    <style>
+      h1.lg-headingb,
+      h2.lg-heading,
+      h3.lg-heading {
+        font-size: 2rem;
+        color: #fff;
+      }
+      .text-secondaryb {
+        color: #e64834;
+      }
+      .inputb{
+          margin-top: 5px !important;
+      }
+      .csustomcode{
+          width: 50% !important;
+          margin-left: 10px;
+          display:inline !important;
+          }
+        .labelb{
+            font-size: 18px;
+            color: rgb(199, 199, 199);
+        }
+        .footfixed {
+            position: absolute !important;
+            width: 100% !important;
+          background-color: #181515 !important;
+          }
+          body{
+            background-color: #1f1f1f !important;
+          }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
+      <nav class="menu">
+        <div class="menu-branding"></div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="https://dragongear.tk/" class="nav-link"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://dragongear.tk/about.html" class="nav-link"> About Me </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="https://dragongear.tk/work.html" class="nav-link"> My Work </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://contact.dragongear.tk" class="nav-link"> Contact Us </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://dragongear.tk/join.html" class="nav-link"> Join Us </a>
+          </li>
+          
+        </ul>
+      </nav>
+    </header>
+    <div class="containerb">
+      <section class="row mt-5">
+        <div class="col-md-6 m-auto">
+          <div class="text-center"> 
+            <h1><a href="/"><i class="fa fa-link fa-4x" style="margin: 5px;"></i></a></h1>
+            <h1 class="lg-headingb"><a href="/">Linkifly  Url <span class="text-secondaryb">Shortener</span></a>
+            </h1>
+          </div><div id="checker" style="display: none"><%=value%></div>
+          <div id="message">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert" id="div2">
+            <p class="ptag"><%=message%></p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closebutton">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div></div>
+          <form name="joinus" action="/shorten" method="post">
+            <div class="group">
+  
+              <div class="form-group">
+                <h3>Long URL:</h3>
+                <input type="text" required name="longurl" autocomplete="off" class="form-control inputb" placeholder="Long Url" value="<%=value%>" />
+              </div>
+  
+              <label for="basic-url" class="form-label">Custom Url Code:</label>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">
+                  <%=baseUrl%>
+                </span>
+                <input type="text" class="form-control" id="basic-url" name="customcode" aria-describedby="basic-addon3" placeholder="Custom (Optional)">
+              </div>
+              <input type="submit" class="mt-1 btnb btn-primaryb btn-block buht" />
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <footer id="main-footer" class="mt-5 footfixed">&copy; 2022 Dragon Gear</a></footer>
+    <script src="https://www.dragongear.tk/js/main.js"></script>
+    <script>
+      const k = document.getElementById("checker").innerHTML;
+      if (k == "") {
+        var elem = document.getElementById("message");
+        elem.remove();
+      }else{ console.log("")
+      }
+      
+    </script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  </body>
+</html>
